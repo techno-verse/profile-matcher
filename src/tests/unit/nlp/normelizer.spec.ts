@@ -16,7 +16,7 @@ describe('Normalizer Positive Cases', () => {
         let data: string = "This is the unit test for Normalizer";
         let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
 
-        expect(normalizedString).to.be.contain("normel");
+        expect(normalizedString).to.be.contain("norm");
 
     });
 
@@ -88,7 +88,7 @@ describe('Normalizer Positive Cases', () => {
 
         let data: string = "This is the unit test for Normalizer";
         let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
-        expect(normalizedString).to.be.equals("this is the unit test for normel");
+        expect(normalizedString).to.be.equals("this is the unit test for norm");
     });
 
     it("Test Normalizer Can Remove Special Characters And Converts To Lower Case", () => {
@@ -110,7 +110,7 @@ describe('Normalizer Positive Cases', () => {
 
         let data: string = "This is the Unit And @ Coverage 99 for Normalizer";
         let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
-        expect(normalizedString).to.be.equals("unit,@,coverag,99,normel");
+        expect(normalizedString).to.be.equals("unit,@,coverag,99,normal");
     });
 
     it("Test Normalizer Does Not Apply Normalization", () => {
