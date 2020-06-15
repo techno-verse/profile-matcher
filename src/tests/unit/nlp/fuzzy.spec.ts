@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { FuzzyMacth } from '../../../lib/nlp/fuzzy';
+import { FuzzyMatch } from '../../../lib/nlp/fuzzy';
 const options = {
     isCaseSensitive: false,
     includeScore: true,
@@ -14,14 +14,14 @@ const options = {
     keys: [""],
 };
 
-describe('Fuzzy Match Postivie Cases', () => {
-    it('Test Fuzzy Match Scoreing', () => {
+describe('Fuzzy Match Positive Cases', () => {
+    it('Test Fuzzy Match Scorning', () => {
         const data = ['banking',
             'information',
             'transportation/trucking/railroad',
             'computer',
             'software'];
-        let fuzzyMatch: any = new FuzzyMacth(options, data);
+        let fuzzyMatch: any = new FuzzyMatch(options, data, true, false, true, true);
         let score: number[] = fuzzyMatch.get_score("computer software");
         expect(score.length).to.be.above(0);
     });
@@ -29,13 +29,44 @@ describe('Fuzzy Match Postivie Cases', () => {
 });
 
 describe('Fuzzy Match Negative Cases', () => {
-    it('Test Fuzzy Match Scoreing with bad Spelling', () => {
+    it('Test Fuzzy Match Scorning with bad Spelling', () => {
         const data = ['banking',
             'information',
             'transportation/trucking/railroad',
             'computer',
             'software', "UI/UX"];
-        let fuzzyMatch: any = new FuzzyMacth(options, data);
+        let fuzzyMatch: any = new FuzzyMatch(options, data, true, false, true, true);
+        let score: any[] = fuzzyMatch.get_score("cumputer softwere");
+        score.forEach(data => {
+            let acutualVal: number = data.score;
+            let expectVal: number = 0.5882352941176471;
+            expect(acutualVal).to.be.equals(expectVal);
+        });
+    });
+
+    it('Test Fuzzy Match Scoreing with bad Spelling And Without Removing Special Chacarter ', () => {
+        const data = ['banking',
+            'information',
+            'transportation/trucking/railroad',
+            'computer',
+            'software', "UI/UX"];
+        let fuzzyMatch: any = new FuzzyMatch(options, data, true, false, true, false);
+        let score: any[] = fuzzyMatch.get_score("cumputer softwere");
+        score.forEach(data => {
+            let acutualVal: number = data.score;
+            let expectVal: number = 0.5882352941176471;
+            expect(acutualVal).to.be.equals(expectVal);
+        });
+    });
+
+
+    it('Test Fuzzy Match Scorning with bad Spelling And Without Normalization ', () => {
+        const data = ['banking',
+            'information',
+            'transportation/trucking/railroad',
+            'computer',
+            'software', "UI/UX"];
+        let fuzzyMatch: any = new FuzzyMatch(options, data, true, false, true, false);
         let score: any[] = fuzzyMatch.get_score("cumputer softwere");
         score.forEach(data => {
             let acutualVal: number = data.score;

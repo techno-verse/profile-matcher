@@ -1,5 +1,5 @@
 import { NlpTfIdf } from "./nlp/tfidf"
-import { FuzzyMacth } from "./nlp/fuzzy"
+import { FuzzyMatch } from "./nlp/fuzzy"
 import { Helper } from "./helper/helper"
 
 export class Profiler {
@@ -31,12 +31,12 @@ export class Profiler {
             totalWords += queryList.length
         })
 
-        // Multiplying the avrage with 10 to scale with other scores
+        // Multiplying the average with 10 to scale with other scores
         avg = (total / totalWords) * 10
         return avg
     }
 
-    // This method calculates job tite score for a given user
+    // This method calculates job title score for a given user
     get_job_title_score(data: string[], query: string) {
 
         let score: number = 0
@@ -53,7 +53,14 @@ export class Profiler {
             useExtendedSearch: false,
             keys: [""],
         };
-        let fuzzyMatch = new FuzzyMacth(options, data);
+
+        // Apply then following text normalization rules
+        let stopWord: boolean = true;
+        let stem: boolean = true;
+        let specialChar: boolean = true;
+        let loweCase: boolean = true;
+
+        let fuzzyMatch = new FuzzyMatch(options, data, stopWord, stem, specialChar, loweCase);
         let scoreList: number[] = [];
 
         // Automatically scores the direct match with 1 to reduce unnecessary data processing 
@@ -61,8 +68,8 @@ export class Profiler {
             score = 1
         }
 
-        // Automatically "not applicatble" score to 0 
-        if (query.includes("not applicatble")) {
+        // Automatically "not applicable" score to 0 
+        if (query.includes("not applicable")) {
             score = 0
         }
 
@@ -78,15 +85,15 @@ export class Profiler {
                 })
                 // FuzzyMatch returns value closest to 0 as best score
                 let minScore: number = Math.min(...scoreList)
-                // We need to scalseit to match with other scores which considers value closest to 1 asthe best score
+                // We need to scale to match with other scores which considers value closest to 1 as the best score
                 score = 1 - minScore
             }
         }
         return score;
     }
 
-    // Get's the closes distance from list of distances for a given used
-    get_closest_disctance(locations: object[], personLat: number, personLong: number) {
+    // Gets the closes distance from list of distances for a given used
+    get_closest_distance(locations: object[], personLat: number, personLong: number) {
         let distList: number[] = []
         locations.forEach((element: any) => {
             let profileLat: number = element.location.location.latitude

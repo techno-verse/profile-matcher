@@ -11,9 +11,9 @@ export class Profile {
         this.distance = distance;
         this.industrySc = industryScore;
         this.jobTitleSc = jobTitleScore;
-        //here we are scalling the distance to how close it is from being 100%
+        //here we are scaling the distance to how close it is from being 100%
         this.distSc = ((100 - distance) / 100);
-        // Avrage score combining all three fectors 
+        // Average score combining all three fetors 
         this.score = (this.industrySc + this.jobTitleSc + this.distSc) / 3
     }
 }

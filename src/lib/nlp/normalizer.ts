@@ -13,8 +13,8 @@ export class Normalizer {
 
     // Removes stops words such as and,is..etc 
     private remove_stop_words(data: string) {
-        let splitted: string[] = sw.removeStopwords(data.split(' '));
-        this.normalized = splitted.join()
+        let splattedWords: string[] = sw.removeStopwords(data.split(' '));
+        this.normalized = splattedWords.join()
     }
 
     // User to remove special characters and additional space
@@ -27,17 +27,17 @@ export class Normalizer {
     }
 
     private remove_stem(data: string) {
-        let splitted: string[] = data.split(',')
+        let splattedWords: string[] = data.split(',')
         let newList: string[] = [];
-        splitted.forEach(data => {
+        splattedWords.forEach(data => {
             newList.push(natural.PorterStemmer.stem(data));
         })
         this.normalized = newList.join()
     }
 
-    // NA and n/a with not applicatble to perform better socring 
-    private replaceeNA() {
-        this.normalized = this.normalized.replace(/^(na|n\/a)/g, "not applicatble")
+    // NA and n/a with not applicable to perform better scoring 
+    private replaceNA() {
+        this.normalized = this.normalized.replace(/^(na|n\/a)/g, "not applicable")
     }
 
     // This method will apply the normalization based on the user configured flags 
@@ -55,7 +55,7 @@ export class Normalizer {
         if (specialChar) {
             this.remove_special_characters(this.normalized);
         }
-        this.replaceeNA()
+        this.replaceNA()
         return this.normalized;
     }
 }

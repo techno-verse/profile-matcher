@@ -5,18 +5,25 @@ import { Profile } from "./model/profile"
 const helper = new Helper()
 
 function main() {
-    let profileList: Profile[] = []
+  
 
-    helper.load_csv("src/data/respondents_data_test.csv").then((data) => {
+    helper.load_csv("src/data/respondents_data_test.csv").then((person) => {
+
+        // Initializing profiler object to perform profiling on each person for the closes job match 
         const profiler = new Profiler()
+        // List for storing profiled scores data
+        let profileList: Profile[] = []
+
+        // Loads Project description data for the given data in the project.json
         let locations = helper.projectData.cities
         let industryList = helper.projectData.professionalIndustry
         let jobTitleList = helper.projectData.professionalJobTitles
 
+        // Iteration over each person object list returned thorough load_csv
+        person.forEach(data => {
 
-        data.forEach(data => {
+            // Get the required person class properties to perform profiling 
             let name = data.get_name()
-
             let personLat = data.get_latitude()
             let personLong = data.get_longitude()
             let industry = data.get_industry()
@@ -26,11 +33,12 @@ function main() {
             let industryScore = profiler.get_industry_score(industrySet, industryList)
             let jobTitleScore = profiler.get_job_title_score(jobTitleList, jobTitle.toLowerCase())
 
-            let shortDist = profiler.get_closest_disctance(locations, personLat, personLong)
+            let shortDist = profiler.get_closest_distance(locations, personLat, personLong)
             let profile = new Profile(name, shortDist, industryScore, jobTitleScore)
             profileList.push(profile)
         })
     });
 }
 
+// Main function to be triggered upon running npm start
 main()

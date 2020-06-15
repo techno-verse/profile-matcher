@@ -1,5 +1,5 @@
 import { City } from "./city"
-import { Normalizer } from "../lib/nlp/normelizer"
+import { Normalizer } from "../lib/nlp/normalizer"
 var normalizer = new Normalizer()
 
 export class Person extends City {
