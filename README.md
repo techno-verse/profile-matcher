@@ -21,7 +21,7 @@ The final scoring will be nothing but an average of all three scores.
 We are using `Docker` and `docker-compose` to ease the packaging and deploying the application.
 
 ### Testing
-We are levering `Mocha` and `Chai` for performing unit testing and assertion. To measure and generate the coverage report, we are using `Istanbul`.
+We are using `Mocha` and `Chai` for performing unit testing and assertion. To measure and generate the coverage report, we are using `Istanbul`.
 
 ## Implementation Details
 
