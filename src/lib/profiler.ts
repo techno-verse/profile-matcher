@@ -33,6 +33,8 @@ export class Profiler {
 
         // Multiplying the average with 10 to scale with other scores
         avg = (total / totalWords) * 10
+        // Some of the good matches are over fitting and causing 
+        // the score to be + 0.5 more which need to be scaled back to 1
         if (avg > 1) {
             avg = 1
         }

@@ -7,7 +7,9 @@ export class Helper {
     projectData: any;
 
     constructor() {
-        let dataFilePath = "src/data/project.json"
+        // Read's data file path from ENV variable to support dynamic files
+        let dataFilePath;
+        dataFilePath= process.env["PROJECT_DATA"];
         this.projectData = this.read_json_file(dataFilePath);
     }
 

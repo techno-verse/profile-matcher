@@ -3,11 +3,22 @@ services:
   profiler:
     build: .
     command: npm start
+    environment:
+      PROFILE_DATA: src/data/respondents_data_test.csv
+      PROJECT_DATA: src/data/project.json
+
   coverage:   
     build: .
     command: npm run coverage 
+    environment:
+      PROFILE_DATA: src/data/respondents_data_test.csv
+      PROJECT_DATA: src/data/project.json
+
     volumes:
         - ./results:/app/coverage
   test:
     build: .
     command: npm test
+    environment:
+      PROFILE_DATA: src/data/respondents_data_test.csv
+      PROJECT_DATA: src/data/project.json

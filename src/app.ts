@@ -6,8 +6,11 @@ const helper = new Helper()
 
 function main() {
   
+    // Read's data file path from ENV variable to support dynamic files
+    let profilePath;
+    profilePath= process.env["PROFILE_DATA"];
 
-    helper.load_csv("src/data/respondents_data_test.csv").then((person) => {
+    helper.load_csv(profilePath).then((person) => {
 
         // Initializing profiler object to perform profiling on each person for the closes job match 
         const profiler = new Profiler()
