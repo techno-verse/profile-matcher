@@ -6,4 +6,4 @@ node_modules/
 **/src/**/*.js.map
 **/src/**/*.js
 **/src/tests/**/*.spec.js.map
-**/results/*
+results/*
