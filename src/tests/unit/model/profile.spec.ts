@@ -5,10 +5,10 @@ describe('Profile Model Test', () => {
 
     it('Test Profile Model Can Set Values', () => {
         let name: string = "Batman"
-        let distane: number = 0
+        let distance: number = 0
         let industryScore: number = 0
-        let jobeTitleScore: number = 0
-        let profile: Profile = new Profile(name, distane, industryScore, jobeTitleScore)
+        let jobTitleScore: number = 0
+        let profile: Profile = new Profile(name, distance, industryScore, jobTitleScore)
         console.log(profile.name)
         console.log(profile.distSc)
         console.log(profile.score)

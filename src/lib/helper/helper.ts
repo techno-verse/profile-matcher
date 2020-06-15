@@ -36,17 +36,20 @@ export class Helper {
     }
 
     // Calculates the distance between two GeoCode points
+    // Reference https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
     getDistanceFromLatLonInKm(lat1: number, lon1: number, lat2: number, lon2: number) {
-        var R = 6371; // Radius of the earth in km
-        var dLat = this.deg2rad(lat2 - lat1);  // deg2rad below
-        var dLon = this.deg2rad(lon2 - lon1);
-        var a =
+        let R = 6371; // Radius of the earth in km
+        let lat1Degree = this.deg2rad(lat1)
+        let lat2Degree = this.deg2rad(lat1)
+        let dLat = this.deg2rad(lat2 - lat1);  // deg2rad below
+        let dLon = this.deg2rad(lon2 - lon1);
+        let a =
             Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) *
+            Math.cos(lat1Degree) * Math.cos(lat2Degree) *
             Math.sin(dLon / 2) * Math.sin(dLon / 2)
             ;
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        var d = R * c; // Distance in km
+            let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            let d = R * c; // Distance in km
         return d;
     }
 
