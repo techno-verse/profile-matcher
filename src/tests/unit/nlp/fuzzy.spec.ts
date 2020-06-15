@@ -38,13 +38,13 @@ describe('Fuzzy Match Negative Cases', () => {
         let fuzzyMatch: any = new FuzzyMatch(options, data, true, false, true, true);
         let score: any[] = fuzzyMatch.get_score("cumputer softwere");
         score.forEach(data => {
-            let acutualVal: number = data.score;
+            let acutalVal: number = data.score;
             let expectVal: number = 0.5882352941176471;
-            expect(acutualVal).to.be.equals(expectVal);
+            expect(acutalVal).to.be.equals(expectVal);
         });
     });
 
-    it('Test Fuzzy Match Scoreing with bad Spelling And Without Removing Special Chacarter ', () => {
+    it('Test Fuzzy Match Scorning with bad Spelling And Without Removing Special Chacarter ', () => {
         const data = ['banking',
             'information',
             'transportation/trucking/railroad',
@@ -53,9 +53,9 @@ describe('Fuzzy Match Negative Cases', () => {
         let fuzzyMatch: any = new FuzzyMatch(options, data, true, false, true, false);
         let score: any[] = fuzzyMatch.get_score("cumputer softwere");
         score.forEach(data => {
-            let acutualVal: number = data.score;
+            let acutalVal: number = data.score;
             let expectVal: number = 0.5882352941176471;
-            expect(acutualVal).to.be.equals(expectVal);
+            expect(acutalVal).to.be.equals(expectVal);
         });
     });
 

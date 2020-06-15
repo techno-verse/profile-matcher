@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { NlpTfIdf } from "../../../lib/nlp/tfidf";
 
-describe('TFIDF Postivie Cases', () => {
+describe('TFIDF Positive Cases', () => {
     it('Test TFIDF Match Scoring Document List', () => {
         let dataList: string[] = ["information", "technology", "services", "automotive", "computer", "software", "farming", "graphic", "design"];
         let data: string = "automotive";

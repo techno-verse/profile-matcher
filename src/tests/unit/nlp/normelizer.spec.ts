@@ -2,21 +2,21 @@ import { Normalizer } from "../../../lib/nlp/normalizer"
 import { expect } from "chai";
 
 
-describe('Normelizer Postivie Cases', () => {
+describe('Normalizer Positive Cases', () => {
 
     var normalizer = new Normalizer()
 
     // The following block is for configuring normalizer rules
-    it('Test Normalizer Can Remove Stem Words From A Stirng', () => {
+    it('Test Normalizer Can Remove Stem Words From A String', () => {
         let stopWord = false;
         let stem = true;
         let specialChar = false;
         let loweCase = false
 
-        let data: string = "This is the unit test for Normelizer";
-        let normelisedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
+        let data: string = "This is the unit test for Normalizer";
+        let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
 
-        expect(normelisedString).to.be.contain("normel");
+        expect(normalizedString).to.be.contain("normel");
 
     });
 
@@ -29,9 +29,9 @@ describe('Normelizer Postivie Cases', () => {
         let loweCase = true;
 
         let data: string = "Hello Lower Case";
-        let normelisedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
+        let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
 
-        expect(normelisedString).to.be.equals("hello lower case");
+        expect(normalizedString).to.be.equals("hello lower case");
 
     });
 
@@ -42,8 +42,8 @@ describe('Normelizer Postivie Cases', () => {
         let loweCase = false;
 
         let data: string = "Removed @sasa (ssa) 9ss9";
-        let normelisedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
-        expect(normelisedString).to.be.equals("Removed sasa ssa ss");
+        let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
+        expect(normalizedString).to.be.equals("Removed sasa ssa ss");
 
     });
 
@@ -54,8 +54,8 @@ describe('Normelizer Postivie Cases', () => {
         let loweCase = false;
 
         let data: string = "This is the unit and coverage tests";
-        let normelisedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
-        expect(normelisedString).to.be.equals("unit,coverage,tests");
+        let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
+        expect(normalizedString).to.be.equals("unit,coverage,tests");
     });
 
     it("Test Normalizer Can Apply All Of The Normalization", () => {
@@ -65,8 +65,8 @@ describe('Normelizer Postivie Cases', () => {
         let loweCase = true;
 
         let data: string = "This is the Unit And @ Coverage 99 tests"
-        let normelisedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
-        expect(normelisedString).to.be.equals("unit coverag test");
+        let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
+        expect(normalizedString).to.be.equals("unit coverag test");
     });
 
     it("Test Normalizer Can Remove Stop Words And Converts To Lower Case", () => {
@@ -76,8 +76,8 @@ describe('Normelizer Postivie Cases', () => {
         let loweCase = true;
 
         let data: string = "This is the Unit And @ Coverage 99 tests";
-        let normelisedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
-        expect(normelisedString).to.be.equals("unit,@,coverage,99,tests");
+        let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
+        expect(normalizedString).to.be.equals("unit,@,coverage,99,tests");
     });
 
     it("Test Normalizer Can Remove Stem Words And Converts To Lower Case", () => {
@@ -86,9 +86,9 @@ describe('Normelizer Postivie Cases', () => {
         let specialChar = false;
         let loweCase = true;
 
-        let data: string = "This is the unit test for Normelizer";
-        let normelisedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
-        expect(normelisedString).to.be.equals("this is the unit test for normel");
+        let data: string = "This is the unit test for Normalizer";
+        let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
+        expect(normalizedString).to.be.equals("this is the unit test for normel");
     });
 
     it("Test Normalizer Can Remove Special Characters And Converts To Lower Case", () => {
@@ -98,8 +98,8 @@ describe('Normelizer Postivie Cases', () => {
         let loweCase = true
 
         let data: string = "This is the Unit And @ Coverage 99 tests";
-        let normelisedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
-        expect(normelisedString).to.be.equals("this is the unit and coverage tests");
+        let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
+        expect(normalizedString).to.be.equals("this is the unit and coverage tests");
     });
 
     it("Test Normalizer Can Remove Stop Words And Stem words", () => {
@@ -108,16 +108,15 @@ describe('Normelizer Postivie Cases', () => {
         let specialChar = false;
         let loweCase = false
 
-        let data: string = "This is the Unit And @ Coverage 99 for Normelizer";
-        let normelisedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
-        expect(normelisedString).to.be.equals("unit,@,coverag,99,normel");
+        let data: string = "This is the Unit And @ Coverage 99 for Normalizer";
+        let normalizedString = normalizer.normalize(data, stopWord, stem, specialChar, loweCase);
+        expect(normalizedString).to.be.equals("unit,@,coverag,99,normel");
     });
 
     it("Test Normalizer Does Not Apply Normalization", () => {
-        let data: string = "This is the Unit And @ Coverage 99 for Normelizer";
-        let normelisedString = normalizer.normalize(data);
-        expect(normelisedString).to.be.equals("This is the Unit And @ Coverage 99 for Normelizer");
+        let data: string = "This is the Unit And @ Coverage 99 for Normalizer";
+        let normalizedString = normalizer.normalize(data);
+        expect(normalizedString).to.be.equals("This is the Unit And @ Coverage 99 for Normalizer");
     });
-
 
 });
