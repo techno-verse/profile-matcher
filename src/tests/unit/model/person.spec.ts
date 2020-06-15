@@ -1,7 +1,7 @@
 import { Person } from "../../../model/person"
 import { expect } from 'chai';
 
-describe('Person Model Test', () => {
+describe('Person Model Positive Test', () => {
     const person: Person = new Person()
     it('Test Person Model Is Able To Set And Get The Tokenized City, State, And Country', () => {
         let fullCity: string = "Toronto, ON, Canada"
@@ -68,4 +68,58 @@ describe('Person Model Test', () => {
         let actualLongitude= person.get_longitude()
         expect(expectLingitude).to.be.equal(actualLongitude)
     }); 
+});
+
+
+describe('Person Model Positive Test', () => {
+    const person: Person = new Person()
+
+    it('Test set_city() Function Throws Exceptions', () => {
+        expect(function(){
+            person.set_city("")
+        }).to.throw("city is empty");
+    });
+
+    it('Test set_city() Function Splits City, State, And Country Accordingly', () => {
+        let withoutComma = "City StatewithoutComma Country"
+        person.set_city(withoutComma)
+        expect(person.get_city()).to.be.equals("City StatewithoutComma Country")
+
+    });
+
+    it('Test set_industry() Function Throws Exceptions', () => {
+        expect(function(){
+            person.set_industry("")
+        }).to.throw("industry is empty");
+    });
+
+    it('Test set_jobTitle() Function Throws Exceptions', () => {
+        expect(function(){
+            person.set_jobTitle("")
+        }).to.throw("jobTitle is empty");
+    });
+
+    it('Test set_name() Function Throws Exceptions', () => {
+        expect(function(){
+            person.set_name("")
+        }).to.throw("name is empty");
+    });
+
+    it('Test set_gender() Function Throws Exceptions', () => {
+        expect(function(){
+            person.set_gender("")
+        }).to.throw("gender is empty");
+    });
+
+    it('Test set_latitude() Function Throws Exceptions', () => {
+        expect(function(){
+            person.set_latitude(0)
+        }).to.throw("latitude can not be 0");
+    });
+
+    it('Test set_longitude() Function Throws Exceptions', () => {
+        expect(function(){
+            person.set_longitude(0)
+        }).to.throw("longitude can not be 0");
+    });
 });
