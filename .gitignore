@@ -8,4 +8,4 @@ node_modules/
 **/src/tests/**/*.spec.js.map
 results/*
 
-!results/.md 
+!results/*.md 
