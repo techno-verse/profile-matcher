@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  profiler:
+    build: .
+    command: npm start
+  coverage:   
+    build: .
+    command: npm run coverage 
+    volumes:
+        - ./results:/app/coverage
+  test:
+    build: .
+    command: npm test
