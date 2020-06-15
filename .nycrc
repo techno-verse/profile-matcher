@@ -15,7 +15,8 @@
     "**/*.d.ts",
     "src/tests/**/*.spec.ts",
     "src/tests/**/*.ts",
-    "src/app.ts"
+    "src/app.ts",
+    "results/**"
   ],
   "sourceMap": true,
   "reporter": [
