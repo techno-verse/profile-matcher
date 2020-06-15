@@ -7,3 +7,5 @@ node_modules/
 **/src/**/*.js
 **/src/tests/**/*.spec.js.map
 results/*
+
+!results/.md 
