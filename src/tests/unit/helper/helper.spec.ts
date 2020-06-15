@@ -69,7 +69,7 @@ describe('Test Data Load Positive Tests', () => {
 
         helper.load_csv("src/data/respondents_data_test.csv").then(data => {
             expect(data.length).to.be.greaterThan(0);
-            expect(data.length).to.be.eq(499);
+            expect(data.length).to.be.eq(500);
         })
     });
 

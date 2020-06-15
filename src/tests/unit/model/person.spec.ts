@@ -1,7 +1,7 @@
 import { Person } from "../../../model/person"
 import { expect } from 'chai';
 
-describe('Person Model Positive Test', () => {
+describe('Person Model Positive Tests', () => {
     const person: Person = new Person()
     it('Test Person Model Is Able To Set And Get The Tokenized City, State, And Country', () => {
         let fullCity: string = "Toronto, ON, Canada"
@@ -71,7 +71,7 @@ describe('Person Model Positive Test', () => {
 });
 
 
-describe('Person Model Positive Test', () => {
+describe('Person Model Positive Tests', () => {
     const person: Person = new Person()
 
     it('Test set_city() Function Throws Exceptions', () => {
@@ -81,9 +81,9 @@ describe('Person Model Positive Test', () => {
     });
 
     it('Test set_city() Function Splits City, State, And Country Accordingly', () => {
-        let withoutComma = "City StatewithoutComma Country"
+        let withoutComma = "City State without Comma Country"
         person.set_city(withoutComma)
-        expect(person.get_city()).to.be.equals("City StatewithoutComma Country")
+        expect(person.get_city()).to.be.equals("City State without Comma Country")
 
     });
 

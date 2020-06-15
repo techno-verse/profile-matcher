@@ -1,7 +1,7 @@
 import { Profile } from "../../../model/profile"
 import { expect } from 'chai';
 
-describe('Profile Model Test', () => {
+describe('Profile Model Tests', () => {
 
     it('Test Profile Model Can Set Values', () => {
         let name: string = "Batman"

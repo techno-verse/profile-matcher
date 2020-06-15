@@ -14,7 +14,7 @@ const options = {
     keys: [""],
 };
 
-describe('Fuzzy Match Positive Cases', () => {
+describe('Fuzzy Match Positive Test Cases', () => {
     it('Test Fuzzy Match Scorning', () => {
         const data = ['banking',
             'information',
@@ -28,7 +28,7 @@ describe('Fuzzy Match Positive Cases', () => {
 
 });
 
-describe('Fuzzy Match Negative Cases', () => {
+describe('Fuzzy Match Negative Test Cases', () => {
     it('Test Fuzzy Match Scorning with bad Spelling', () => {
         const data = ['banking',
             'information',
@@ -44,7 +44,7 @@ describe('Fuzzy Match Negative Cases', () => {
         });
     });
 
-    it('Test Fuzzy Match Scorning with bad Spelling And Without Removing Special Chacarter ', () => {
+    it('Test Fuzzy Match Scorning with bad Spelling And Without Removing Special Character ', () => {
         const data = ['banking',
             'information',
             'transportation/trucking/railroad',
@@ -74,9 +74,4 @@ describe('Fuzzy Match Negative Cases', () => {
         });
     });
 
-
-    // it('async function returns true', async () => {
-    //     const result = await barAsync();
-    //     expect(result).to.be.true;
-    // });
 });

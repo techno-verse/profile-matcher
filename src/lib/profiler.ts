@@ -33,6 +33,9 @@ export class Profiler {
 
         // Multiplying the average with 10 to scale with other scores
         avg = (total / totalWords) * 10
+        if (avg > 1) {
+            avg = 1
+        }
         return avg
     }
 
