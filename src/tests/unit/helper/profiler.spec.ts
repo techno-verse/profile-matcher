@@ -81,7 +81,6 @@ describe('Test Profiler Negative Tests', () => {
         let industry: string = "finetech mobile ecommerse"
         let industrySet = helper.create_industry_set(industry)
         let score: number = profiler.get_industry_score(industrySet, get_industries())
-        console.log(score)
         expect(score).to.be.approximately(0.1, 0.1, 'close to 0.1')
     });
 
