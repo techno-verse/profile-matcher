@@ -1,6 +1,6 @@
-import { City } from "./city"
-import { Normalizer } from "../lib/nlp/normalizer"
-var normalizer = new Normalizer()
+import { City } from './city';
+import { Normalizer } from '../lib/nlp/normalizer';
+var normalizer = new Normalizer();
 
 export class Person extends City {
 
@@ -22,7 +22,7 @@ export class Person extends City {
             this.firstName = name;
         }
         else {
-            throw "name is empty"
+            throw "name is empty";
         }
 
     }
@@ -32,7 +32,7 @@ export class Person extends City {
             this.gender = gender;
         }
         else {
-            throw "gender is empty"
+            throw "gender is empty";
         }
     }
 
@@ -45,7 +45,7 @@ export class Person extends City {
             this.jobTitle = normalizer.normalize(jobTitle, stopWord, stem, specialChar, loweCase);
         }
         else {
-            throw "jobTitle is empty"
+            throw "jobTitle is empty";
         }
 
     }
@@ -59,7 +59,7 @@ export class Person extends City {
             this.industry = normalizer.normalize(industry, stopWord, stem, specialChar, loweCase);
         }
         else {
-            throw "industry is empty"
+            throw "industry is empty";
         }
 
     }

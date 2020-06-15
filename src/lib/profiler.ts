@@ -1,6 +1,6 @@
-import { NlpTfIdf } from "./nlp/tfidf"
-import { FuzzyMatch } from "./nlp/fuzzy"
-import { Helper } from "./helper/helper"
+import { NlpTfIdf } from './nlp/tfidf';
+import { FuzzyMatch } from './nlp/fuzzy';
+import { Helper } from './helper/helper';
 
 export class Profiler {
     helper = new Helper();
@@ -67,7 +67,7 @@ export class Profiler {
         let scoreList: number[] = [];
 
         // Automatically scores the direct match with 1 to reduce unnecessary data processing 
-        if (query in data) {
+        if (data.includes(query)) {
             score = 1
         }
 
@@ -81,10 +81,8 @@ export class Profiler {
             const result: any = fuzzyMatch.get_score(query)
             if (result.length > 0) {
                 result.forEach((data: any) => {
-                    if (data.score != null) {
-                        let score = data.score
-                        scoreList.push(score)
-                    }
+                    let score = data.score
+                    scoreList.push(score)
                 })
                 // FuzzyMatch returns value closest to 0 as best score
                 let minScore: number = Math.min(...scoreList)
@@ -98,9 +96,9 @@ export class Profiler {
     // Gets the closes distance from list of distances for a given used
     get_closest_distance(locations: object[], personLat: number, personLong: number) {
         let distList: number[] = []
-        locations.forEach((element: any) => {
-            let profileLat: number = element.location.location.latitude
-            let profileLong: number = element.location.location.longitude
+        locations.forEach((location: any) => {
+            let profileLat: number = location.location.location.latitude
+            let profileLong: number = location.location.location.longitude
             let dist: number = this.helper.getDistanceFromLatLonInKm(personLat, personLong, profileLat, profileLong)
             if (dist < 100) {
                 distList.push(dist)

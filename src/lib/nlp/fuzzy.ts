@@ -1,6 +1,6 @@
 
-import { Normalizer } from "./normalizer"
-import Fuse from "fuse.js";
+import { Normalizer } from './normalizer'
+import Fuse from 'fuse.js';
 
 // This class facilitate "FuzzyMatch" module functionality
 export class FuzzyMatch {

@@ -1,5 +1,5 @@
 import csv = require('csvtojson');
-import { Person } from "../../model/person";
+import { Person } from '../../model/person';
 
 
 export class Helper {
@@ -7,30 +7,31 @@ export class Helper {
     projectData: any;
 
     constructor() {
-        this.projectData = this.read_json_file();
+        let dataFilePath = "src/data/project.json"
+        this.projectData = this.read_json_file(dataFilePath);
     }
 
-    read_json_file() {
+    read_json_file(path: string ) {
         const fs = require('fs');
-        let rawdata = fs.readFileSync('src/data/project.json');
-        let project = JSON.parse(rawdata);
-        return project
+        let rawData = fs.readFileSync(path);
+        let projectData = JSON.parse(rawData);
+        return projectData;
     }
 
     // Serialize csv data to Person class
     async load_csv(path: string) {
-        const jsonObj = await csv().fromFile(path)
-        let results: Person[] = []
+        const jsonObj = await csv().fromFile(path);
+        let results: Person[] = [];
         jsonObj.forEach((data) => {
-            let person = new Person()
-            person.set_city(data.city)
-            person.set_name(data.firstName)
-            person.set_gender(data.gender)
-            person.set_industry(data.industry)
-            person.set_jobTitle(data.jobTitle)
-            person.set_latitude(data.latitude)
-            person.set_longitude(data.longitude)
-            results.push(person)
+            let person = new Person();
+            person.set_city(data.city);
+            person.set_name(data.firstName);
+            person.set_gender(data.gender);
+            person.set_industry(data.industry);
+            person.set_jobTitle(data.jobTitle);
+            person.set_latitude(data.latitude);
+            person.set_longitude(data.longitude);
+            results.push(person);
         })
         return results;
     }
@@ -46,8 +47,7 @@ export class Helper {
         let a =
             Math.sin(dLat / 2) * Math.sin(dLat / 2) +
             Math.cos(lat1Degree) * Math.cos(lat2Degree) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2)
-            ;
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
             let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
             let d = R * c; // Distance in km
         return d;
@@ -55,7 +55,7 @@ export class Helper {
 
     // Converted degree to radius
     deg2rad(deg: number) {
-        return deg * (Math.PI / 180)
+        return deg * (Math.PI / 180);
     }
 
     // Tokenized, clean, and removes duplicates from the industry array

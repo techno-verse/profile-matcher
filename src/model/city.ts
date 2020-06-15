@@ -1,4 +1,4 @@
-import { PLocation } from "./location"
+import { PLocation } from './location'
 
 export class City extends PLocation {
 

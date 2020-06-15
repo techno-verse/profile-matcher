@@ -1,6 +1,6 @@
 
 import natural = require('natural');
-var sw = require('stopword')
+var sw = require('stopword');
 
 //This class provides utility to normalizer the given string 
 export class Normalizer {

@@ -1,6 +1,6 @@
-import { Helper } from "./lib/helper/helper"
-import { Profiler } from "./lib/profiler"
-import { Profile } from "./model/profile"
+import { Helper } from './lib/helper/helper'
+import { Profiler } from './lib/profiler'
+import { Profile } from './model/profile'
 
 const helper = new Helper()
 
@@ -36,6 +36,10 @@ function main() {
             let shortDist = profiler.get_closest_distance(locations, personLat, personLong)
             let profile = new Profile(name, shortDist, industryScore, jobTitleScore)
             profileList.push(profile)
+        })
+        profileList.sort((a,b) =>a.score > b.score ? -1 : a.score < b.score ? 1 : 0)
+        profileList.forEach( data=>{
+            console.log("Name: %s, Distance: %s, Score: %s",data.name, data.distance, data.score.toFixed())
         })
     });
 }
