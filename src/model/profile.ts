@@ -14,11 +14,11 @@ export class Profile {
         //here we are scaling the distance to how close it is from being 100%
         this.distSc = ((100 - distance) / 100);
         // Average score combining all three fetors 
-        this.score = this.calculate_average()
+        this.score = this.calculate_average();
     }
 
     calculate_average(){
-        let results:  number = Math.round(((this.industrySc + this.jobTitleSc + this.distSc) / 3)*100)
-        return results
+        let results:  number = Math.round(((this.industrySc + this.jobTitleSc + this.distSc) / 3)*100);
+        return results;
     }
 }

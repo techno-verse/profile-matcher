@@ -8,18 +8,18 @@ export class PLocation {
     }
 
     protected set_latitude(latitude: number) {
-        this.latitude = latitude
+        this.latitude = latitude;
     }
 
     protected set_longitude(longitude: number) {
-        this.longitude = longitude
+        this.longitude = longitude;
     }
 
     get_latitude() {
-        return this.latitude
+        return this.latitude;
     }
 
     get_longitude() {
-        return this.longitude
+        return this.longitude;
     }
 }

@@ -66,36 +66,36 @@ export class Person extends City {
 
     set_city(city: string) {
         if (city) {
-            let splitData: string[] = city.split(",")
-            super.set_city(splitData[0].trim())
+            let splitData: string[] = city.split(",");
+            super.set_city(splitData[0].trim());
             if (splitData[1]) {
-                super.set_state(splitData[1].trim())
+                super.set_state(splitData[1].trim());
             }
             if (splitData[2]) {
-                super.set_country(splitData[2].trim())
+                super.set_country(splitData[2].trim());
             }
         }
         else {
-            throw "city is empty"
+            throw "city is empty";
         }
     }
 
     set_latitude(latitude: number) {
         if (latitude != 0) {
-            super.set_latitude(latitude)
+            super.set_latitude(latitude);
         }
         else {
-            throw "latitude can not be 0"
+            throw "latitude can not be 0";
         }
 
     }
 
     set_longitude(longitude: number) {
         if (longitude != 0) {
-            super.set_longitude(longitude)
+            super.set_longitude(longitude);
         }
         else {
-            throw "longitude can not be 0"
+            throw "longitude can not be 0";
         }
     }
 
@@ -124,7 +124,7 @@ export class Person extends City {
     }
 
     get_city(): string {
-        return super.get_city()
+        return super.get_city();
     }
     get_state(): string {
         return super.get_state();
