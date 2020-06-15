@@ -5,3 +5,4 @@ node_modules/
 # Ignores compiled TypeScript files
 **/src/**/*.js.map
 **/src/**/*.js
+**src/tests/**/*.spec.js.map
