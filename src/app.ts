@@ -15,7 +15,6 @@ function main() {
 
 
         data.forEach(data => {
-            console.log(data)
             let name = data.get_name()
 
             let personLat = data.get_latitude()
