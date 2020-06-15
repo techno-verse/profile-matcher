@@ -114,7 +114,7 @@ The following block will describe what each directory in the project structure r
 ```
 
 
-###  Running unit tests with coverage
+###  Running the unit tests with coverage
 ```
 PROFILE_DATA=src/data/respondents_data_test.csv PROJECT_DATA=src/data/project.json npm run coverage
 ```
