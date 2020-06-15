@@ -27,7 +27,7 @@ We are levering `Mocha` and `Chai` for performing unit testing and assertion. To
 
 The engineering of the application leverages the `TypeScript`'s  Object Oriented functionalities. We are using concepts such as Inheritance, and Encapsulation to make the application strictly types, more resilience, and secure.
 
-The engineered application project structure looks is as following:
+The engineered application project structure looks like the following tree:
 
 ```
 .
