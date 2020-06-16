@@ -86,7 +86,7 @@ describe('Test Profiler Negative Tests', () => {
     });
 
     it('Test Industry Average Score For Really Bad Industry String With Special Character', () => {
-        let industry: string = "soft ware engineer insurnce ban king finåncial"
+        let industry: string = "software engineer insurance ban king finåncial"
         let industrySet = helper.create_industry_set(industry)
         let score: number = profiler.get_industry_score(industrySet, get_industries())
         console.log(score)
