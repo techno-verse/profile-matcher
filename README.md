@@ -9,10 +9,10 @@ The scoring will be performed based on the data match between the project data p
 We will be leveraging the [TFIDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) algorithm to evaluate the weight of the industries that represents the expected industrial experience an idea candidate `should possesses` to the industrials experience a candidate `actually possess`. We will measure the average frequency of each expected project industries in the candidate's profile data to get the final matching score.
 
 ### Fuzzy Match for Job Title Scoring
-We will be using fuzzy match to score the possible  match to match the expected job titles with the title a candidate posses. 
+We will be using fuzzy match to score the possible match to match the expected job titles with the title a candidate possess. 
 
 ### Scoring Distance
-We will be using [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to measure the distance between two Geo Logical points. Once we measure the distance, we want to score it and scale it to match the other scores so we can get some accurate results. To do this, we will subtract the closes distance with 1  so we get number close to 1. We are also filtering distance that is more tha 100KM as per the requirements.
+We will be using [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to measure the distance between two Geo Logical points. Once we measure the distance, we want to score it and scale it to match the other scores so we can get some accurate results. To do this, we will subtract the closes distance with 1 so we get number close to 1. We are also filtering distance that is more tha 100KM as per the requirements.
 
 ### Final Score
 The final scoring will be nothing but an average of all three scores.
