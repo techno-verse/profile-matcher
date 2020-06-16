@@ -76,7 +76,7 @@ The following block will describe what each directory in the project structure r
 
    -  The *Normalizer* class in `src/lib/nlp/normalizer.ts` will provide test normalization functionality.
 
-   - The *NlpTfIdf* class in `src/lib/nlp/tfidf.ts` will provide functionality to perform tfidf on any given documents.
+   - The *NlpTfIdf* class in `src/lib/nlp/tfidf.ts` will provide functionality to perform tfidf on any given document.
 
    - The *Profiler* class in `src/lib/profiler.ts` will provide ability to perform profiling on any given candidate profile and calculate the final score.
 
