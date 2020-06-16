@@ -18,7 +18,7 @@ We will be using [Haversine formula](https://en.wikipedia.org/wiki/Haversine_for
 The final scoring will be nothing but an average of all three scores.
 
 ### Developer Productivity
-We are using `Docker` and `docker-compose` to ease the packaging and deploying the application.
+We are using `Docker` and `docker-compose` to ease the application packaging and deploying process.
 
 ### Testing
 We are using `Mocha` and `Chai` for performing unit testing and assertion. To measure and generate the coverage report, we are using `Istanbul`.
