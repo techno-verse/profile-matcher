@@ -15,7 +15,7 @@ We will be using a fuzzy match to score the possible match to match the expected
 We will be using the [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to measure the distance between two geo coordinates. Once we measure the distance, we want to score it and scale it to match the other scores so we can get some accurate results. To do this, we will subtract the closest distance with 1 so we get a number close to 1. We are also filtering distance that is more than 100KM as per the requirements.
 
 ### Final Score
-The final scoring will be nothing but an average of all three scores.
+The final scoring will be nothing but the average of all three scores.
 
 ### Developer Productivity
 We are using `Docker` and `docker-compose` to ease the application packaging and deploying process.
