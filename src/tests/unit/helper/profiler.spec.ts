@@ -54,6 +54,7 @@ describe('Test Profiler Positive Tests', () => {
         let distance: number = profiler.get_closest_distance(get_locations(), latitude, longitude)
         expect(distance).to.be.eq(0)
     })
+    
 });
 
 
@@ -82,6 +83,14 @@ describe('Test Profiler Negative Tests', () => {
         let industrySet = helper.create_industry_set(industry)
         let score: number = profiler.get_industry_score(industrySet, get_industries())
         expect(score).to.be.approximately(0.1, 0.1, 'close to 0.1')
+    });
+
+    it('Test Industry Average Score For Really Bad Industry String With Special Character', () => {
+        let industry: string = "soft ware engineer insurnce ban king finåncial"
+        let industrySet = helper.create_industry_set(industry)
+        let score: number = profiler.get_industry_score(industrySet, get_industries())
+        console.log(score)
+        expect(score).to.be.approximately(0.3, 0.1, 'close to 0.3')
     });
 
     it('Test Distance Calculator Returns 0 For The GeoCode Greater Than 100', () => {
