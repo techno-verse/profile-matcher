@@ -70,6 +70,14 @@ describe('Test Profiler Negative Tests', () => {
         expect(score).to.be.lessThan(0.4)
     });
 
+    it('Test Job Title Average Score With Accent Character', () => {
+
+        let query: string = "softwåre enginèér"
+        let score: number = profiler.get_job_title_score(get_job_titles(), query)
+
+        expect(score).to.be.approximately(0.8, 0.1, "close to 0.7-0.8")
+    });
+
     it('Test Job Title Average Score When The Title Does Not Match', () => {
 
         let query: string = "infrastructure analyst"
@@ -82,15 +90,15 @@ describe('Test Profiler Negative Tests', () => {
         let industry: string = "finetech mobile ecommerse"
         let industrySet = helper.create_industry_set(industry)
         let score: number = profiler.get_industry_score(industrySet, get_industries())
-        expect(score).to.be.approximately(0.1, 0.1, 'close to 0.1')
+        expect(score).to.be.approximately(0.1, 0.1, 'close to 0-0.1')
     });
 
-    it('Test Industry Average Score For Really Bad Industry String With Special Character', () => {
+    it('Test Industry Average Score For Really Bad Industry String With Accent Character', () => {
         let industry: string = "software engineer insurance ban king finåncial"
         let industrySet = helper.create_industry_set(industry)
         let score: number = profiler.get_industry_score(industrySet, get_industries())
         console.log(score)
-        expect(score).to.be.approximately(0.3, 0.1, 'close to 0.3')
+        expect(score).to.be.approximately(0.3, 0.1, 'close to 0.2-0.3')
     });
 
     it('Test Distance Calculator Returns 0 For The GeoCode Greater Than 100', () => {
