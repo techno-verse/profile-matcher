@@ -6,7 +6,7 @@ The scoring will be performed based on the data match between the project data p
 
 ## Description
 ### Term Frequency–Inverse Document Frequency for industrial experience scoring
-We will be leveraging the [TFIDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) algorithm to evaluate the weight of the industries that represents the expected industrial experience an idea candidate `should possesses` to the industrials experience a candidate `actually possess`. We will measure the average frequency of each expected project industry in the candidate's profile data to get the final matching score.
+We will be leveraging the [TFIDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) algorithm to evaluate the weight of the industries that represents the expected industrial experience an ideal candidate `should possesses` to the industrials experience a candidate `actually possess`. We will measure the average frequency of each expected project industry in the candidate's profile data to get the final matching score.
 
 ### Fuzzy Match for Job Title Scoring
 We will be using a fuzzy match to score the possible match to match the expected job titles with the title a candidate possesses.
