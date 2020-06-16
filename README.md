@@ -72,13 +72,13 @@ The following block will describe what each directory in the project structure r
 - The `lib` directory will hold all the classes that are required to perform candidate profiling.
    - The *Helper* class in `src/lib/helper/helper.ts` holds utilities for all the basic tasks required to be shared by multiple classes such as loading CSV and JSON files, measuring distance and radius.
 
-   -  The *FuzzyMatch* class in `src/lib/nlp/fuzzy.ts` will provide fuzzy matching related functionalities.
+   -  The *FuzzyMatch* class in `src/lib/nlp/fuzzy.ts` will provide the fuzzy matching related functionalities.
 
-   -  The *Normalizer* class in `src/lib/nlp/normalizer.ts` will provide test normalization functionality.
+   -  The *Normalizer* class in `src/lib/nlp/normalizer.ts` will provide the text normalization functionality.
 
-   - The *NlpTfIdf* class in `src/lib/nlp/tfidf.ts` will provide functionality to perform tfidf on any given document.
+   - The *NlpTfIdf* class in `src/lib/nlp/tfidf.ts` will provide the functionality to perform tfidf on any given document.
 
-   - The *Profiler* class in `src/lib/profiler.ts` will provide ability to perform profiling on any given candidate profile and calculate the final score.
+   - The *Profiler* class in `src/lib/profiler.ts` will provide the ability to perform profiling on any given candidate profile and calculate the final score.
 
 - The `model` directory will hold all the data models for modeling city, location, person, and profile data.
 
