@@ -1,6 +1,6 @@
 # Profile Matcher
 ## Introduction
-This simple application will score each row defined in the `src/data/respondents_data_test.csv` which represents the candidate data with their job title, industries they worked in, and their residence.
+This simple application will score each row defined in the `src/data/profile.csv` which represents the candidate data with their job title, industries they worked in, and their residence.
 
 The scoring will be performed based on the data match between the project data provided in the `src/data/project.json` and the ideal candidates that matches those data with the relevant fields such as industries, job title, and the distance between the project location and candidates location.
 
@@ -34,7 +34,7 @@ The engineered application project structure looks like the following tree:
 ├── app.ts
 ├── data
 │   ├── project.json
-│   └── respondents_data_test.csv
+│   └── profile.csv.csv
 ├── lib
 │   ├── helper
 │   │   └── helper.ts
@@ -93,7 +93,7 @@ The following block will describe what each directory in the project structure r
 
 # Via NPM
 > npm install -D
-> env PROFILE_DATA=src/data/respondents_data_test.csv PROJECT_DATA=src/data/project.json  npm start
+> env PROFILE_DATA=src/data/profile.csv PROJECT_DATA=src/data/project.json  npm start
 
 # Via Docker Compose
 > docker-compose run profiler
@@ -104,7 +104,7 @@ The following block will describe what each directory in the project structure r
 
 ###  Running the unit tests CLI
 ```
-> PROFILE_DATA=src/data/respondents_data_test.csv PROJECT_DATA=src/data/project.json npm test
+> PROFILE_DATA=src/data/profile.csv PROJECT_DATA=src/data/project.json npm test
 ```
 
 
@@ -116,7 +116,7 @@ The following block will describe what each directory in the project structure r
 
 ###  Running the unit tests with coverage
 ```
-PROFILE_DATA=src/data/respondents_data_test.csv PROJECT_DATA=src/data/project.json npm run coverage
+PROFILE_DATA=src/data/profile.csv PROJECT_DATA=src/data/project.json npm run coverage
 ```
 
 ###  Running the unit tests with coverage via Docker compose
