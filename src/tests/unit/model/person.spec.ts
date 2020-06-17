@@ -77,7 +77,7 @@ describe('Person Model Positive Tests', () => {
     it('Test set_city() Function Throws Exceptions', () => {
         expect(function(){
             person.set_city("")
-        }).to.throw("city is empty");
+        }).to.throw(Error);
     });
 
     it('Test set_city() Function Splits City, State, And Country Accordingly', () => {
@@ -90,36 +90,36 @@ describe('Person Model Positive Tests', () => {
     it('Test set_industry() Function Throws Exceptions', () => {
         expect(function(){
             person.set_industry("")
-        }).to.throw("industry is empty");
+        }).to.throw(Error);
     });
 
     it('Test set_jobTitle() Function Throws Exceptions', () => {
         expect(function(){
             person.set_jobTitle("")
-        }).to.throw("jobTitle is empty");
+        }).to.throw(Error);
     });
 
     it('Test set_name() Function Throws Exceptions', () => {
         expect(function(){
             person.set_name("")
-        }).to.throw("name is empty");
+        }).to.throw(Error);
     });
 
     it('Test set_gender() Function Throws Exceptions', () => {
         expect(function(){
             person.set_gender("")
-        }).to.throw("gender is empty");
+        }).to.throw(Error);
     });
 
     it('Test set_latitude() Function Throws Exceptions', () => {
         expect(function(){
             person.set_latitude(0)
-        }).to.throw("latitude can not be 0");
+        }).to.throw(Error);
     });
 
     it('Test set_longitude() Function Throws Exceptions', () => {
         expect(function(){
             person.set_longitude(0)
-        }).to.throw("longitude can not be 0");
+        }).to.throw(Error);
     });
 });

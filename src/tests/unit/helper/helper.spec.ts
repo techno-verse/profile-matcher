@@ -31,7 +31,7 @@ describe('Test GeoCode Distance Calculator Positive Tests', () => {
         let latitude: number = 40.6781784;
         let longitude: number = -73.9441579;
 
-        let distance: number = helper.getDistanceFromLatLonInKm(latitude, longitude, latitude, longitude);
+        let distance: number = helper.get_distance_from_lat_lon_in_km(latitude, longitude, latitude, longitude);
         expect(distance).to.be.eq(0);
 
     });
@@ -44,7 +44,7 @@ describe('Test GeoCode Distance Calculator Positive Tests', () => {
         let latitudeB: number = 40.7484405;
         let longitudeB: number = -73.9878531;
 
-        let distance: number = helper.getDistanceFromLatLonInKm(latitudeA, longitudeA, latitudeB, longitudeB);
+        let distance: number = helper.get_distance_from_lat_lon_in_km(latitudeA, longitudeA, latitudeB, longitudeB);
         distance = Math.round(distance);
         
         // This is the google's calculate distance between  

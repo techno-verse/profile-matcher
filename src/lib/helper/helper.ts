@@ -40,7 +40,7 @@ export class Helper {
 
     // Calculates the distance between two GeoCode points
     // Reference https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
-    getDistanceFromLatLonInKm(lat1: number, lon1: number, lat2: number, lon2: number) {
+    get_distance_from_lat_lon_in_km(lat1: number, lon1: number, lat2: number, lon2: number) {
         let R = 6371; // Radius of the earth in km
         let lat1Degree = this.deg2rad(lat1)
         let lat2Degree = this.deg2rad(lat1)

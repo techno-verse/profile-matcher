@@ -22,7 +22,7 @@ export class Person extends City {
             this.firstName = name;
         }
         else {
-            throw "name is empty";
+            throw Error("name is empty");
         }
 
     }
@@ -32,7 +32,7 @@ export class Person extends City {
             this.gender = gender;
         }
         else {
-            throw "gender is empty";
+            throw Error("gender is empty");
         }
     }
 
@@ -45,7 +45,7 @@ export class Person extends City {
             this.jobTitle = normalizer.normalize(jobTitle, stopWord, stem, specialChar, loweCase);
         }
         else {
-            throw "jobTitle is empty";
+            throw Error("jobTitle is empty");
         }
 
     }
@@ -59,7 +59,7 @@ export class Person extends City {
             this.industry = normalizer.normalize(industry, stopWord, stem, specialChar, loweCase);
         }
         else {
-            throw "industry is empty";
+            throw Error("industry is empty");
         }
 
     }
@@ -76,7 +76,7 @@ export class Person extends City {
             }
         }
         else {
-            throw "city is empty";
+            throw Error("city is empty");
         }
     }
 
@@ -85,7 +85,7 @@ export class Person extends City {
             super.set_latitude(latitude);
         }
         else {
-            throw "latitude can not be 0";
+            throw Error("latitude can not be 0");
         }
 
     }
@@ -95,7 +95,7 @@ export class Person extends City {
             super.set_longitude(longitude);
         }
         else {
-            throw "longitude can not be 0";
+            throw Error("longitude can not be 0");
         }
     }
 

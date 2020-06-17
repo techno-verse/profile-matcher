@@ -101,7 +101,7 @@ export class Profiler {
         locations.forEach((location: any) => {
             let profileLat: number = location.location.location.latitude;
             let profileLong: number = location.location.location.longitude;
-            let dist: number = this.helper.getDistanceFromLatLonInKm(personLat, personLong, profileLat, profileLong);
+            let dist: number = this.helper.get_distance_from_lat_lon_in_km(personLat, personLong, profileLat, profileLong);
             if (dist < 100) {
                 distList.push(dist);
             }
