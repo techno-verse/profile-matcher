@@ -24,7 +24,6 @@ export class Person extends City {
         else {
             throw Error("name is empty");
         }
-
     }
 
     set_gender(gender: string) {
@@ -47,7 +46,6 @@ export class Person extends City {
         else {
             throw Error("jobTitle is empty");
         }
-
     }
 
     set_industry(industry: string) {
@@ -61,7 +59,6 @@ export class Person extends City {
         else {
             throw Error("industry is empty");
         }
-
     }
 
     set_city(city: string) {
@@ -87,7 +84,6 @@ export class Person extends City {
         else {
             throw Error("latitude can not be 0");
         }
-
     }
 
     set_longitude(longitude: number) {
