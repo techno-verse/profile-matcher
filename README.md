@@ -34,7 +34,7 @@ The engineered application project structure looks like the following tree:
 ├── app.ts
 ├── data
 │   ├── project.json
-│   └── profile.csv.csv
+│   └── profile.csv
 ├── lib
 │   ├── helper
 │   │   └── helper.ts
