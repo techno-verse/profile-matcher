@@ -5,7 +5,7 @@ describe('Helper Class Positive Tests', () => {
     let helper: Helper = new Helper();
 
     it('Test Degree to Radius Converter', () => {
-        let radius = helper.deg2rad(1);
+        let radius = helper.deg_to_rad(1);
         expect(radius).to.be.equals(0.017453292519943295);
     });
 
