@@ -10,7 +10,13 @@ export class Helper {
         // Read's data file path from ENV variable to support dynamic files
         let dataFilePath;
         dataFilePath= process.env["PROJECT_DATA"];
-        this.projectData = this.read_json_file(dataFilePath);
+        if (dataFilePath){
+            this.projectData = this.read_json_file(dataFilePath);
+        }
+        else{
+            throw Error("Pleases set PROJECT_DATA environment variable")
+        }
+       
     }
 
     read_json_file(path: string ) {
