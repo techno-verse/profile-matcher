@@ -48,10 +48,10 @@ export class Helper {
     // Reference https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
     get_distance_from_lat_lon_in_km(lat1: number, lon1: number, lat2: number, lon2: number) {
         let R = 6371; // Radius of the earth in km
-        let lat1Degree = this.deg2rad(lat1)
-        let lat2Degree = this.deg2rad(lat1)
-        let dLat = this.deg2rad(lat2 - lat1);  // deg2rad below
-        let dLon = this.deg2rad(lon2 - lon1);
+        let lat1Degree = this.deg_to_rad(lat1)
+        let lat2Degree = this.deg_to_rad(lat1)
+        let dLat = this.deg_to_rad(lat2 - lat1);  // deg2rad below
+        let dLon = this.deg_to_rad(lon2 - lon1);
         let a =
             Math.sin(dLat / 2) * Math.sin(dLat / 2) +
             Math.cos(lat1Degree) * Math.cos(lat2Degree) *
@@ -62,7 +62,7 @@ export class Helper {
     }
 
     // Converted degree to radius
-    deg2rad(deg: number) {
+    deg_to_rad(deg: number) {
         return deg * (Math.PI / 180);
     }
 
