@@ -25,7 +25,7 @@
     "cross-env": "^5.2.0",
     "fuse.js": "^6.0.4",
     "install": "^0.13.0",
-    "mocha": "^6.2.3",
+    "mocha": "^10.2.0",
     "natural": "^2.1.5",
     "nyc": "^14.1.1",
     "source-map-support": "^0.5.19",
